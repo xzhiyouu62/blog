@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>xzhiyouu's blog</title>
+    <link rel="stylesheet" href="src/contact/css/style.css">
+    <script src="src/contact/js/main.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-white">
+    <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">xzhiyouu's blog</div>
+            <div class="flex space-x-6">
+                <a href="index.html" class="nav-item text-white hover:text-green-400">Home</a>
+                <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
+                <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
+                <a href="terminal.html" class="nav-item text-white hover:text-green-400">Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 pt-24">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+                <h1 class="text-3xl font-bold text-white mb-8 text-center">與我聯繫</h1>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-semibold text-green-400 mb-6">聯絡方式</h2>
+
+                        <a href="mailto:nelson970602@gmail.com" class="contact-item bg-gray-700 p-4 rounded-lg flex items-center hover:bg-gray-600">
+                            <div class="bg-blue-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold">Email</h3>
+                                <p class="text-gray-400">nelson970602@gmail.com</p>
+                            </div>
+                        </a>
+
+                        <a href="https://github.com/xzhiyouu62" target="_blank" class="contact-item bg-gray-700 p-4 rounded-lg flex items-center hover:bg-gray-600">
+                            <div class="bg-purple-700 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold">GitHub</h3>
+                                <p class="text-gray-400">xzhiyouu62</p>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center justify-center">
+                        <div class="relative group">
+                            <a href="https://www.youtube.com/watch?v=LzzW_TBL558" target="_blank">
+                                <img src="assets/images/chiikawa.gif" alt="chiikawa" class="rounded-lg shadow-lg transform transition-transform group-hover:scale-105">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-semibold text-green-400 mb-6">其他平台</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="https://www.instagram.com/xzhiyouu/" target="_blank" class="social-icon bg-gray-700 p-4 rounded-lg text-center hover:bg-gray-600">
+                        <i class="fab fa-instagram text-2xl text-pink-500 mb-2"></i>
+                        <p class="text-gray-400">Instagram</p>
+                    </a>
+                    <a href="https://discordapp.com/users/1143849101692252220" target="_blank" class="social-icon bg-gray-700 p-4 rounded-lg text-center hover:bg-gray-600">
+                        <i class="fab fa-discord text-2xl text-indigo-500 mb-2"></i>
+                        <p class="text-gray-400">Discord</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+                <h2 class="text-2xl font-semibold text-green-400 mb-6">留言板</h2>
+                <div id="comments"></div>
+                <input type="text" id="commentInput" class="bg-gray-700 text-white p-2 rounded" placeholder="輸入留言...">
+                <button onclick="addComment()" class="bg-green-500 text-white px-4 py-2 rounded ml-2">送出</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
+        <div class="mb-4 text-gray-400">
+            <span>Blog up for</span>
+            <span id="runTime" class="text-gray-400"></span>
+        </div>
+        <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function calculateRunTime() {
+            // 設定網站啟動時間
+            const startDate = new Date('2024-10-25T00:00:00');
+            const currentDate = new Date();
+            const timeDiff = currentDate - startDate;
+    
+            // 計算天數、小時、分鐘和秒數
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+    
+            // 更新顯示
+            document.getElementById('runTime').textContent = 
+                `${days} days ${hours} hours ${minutes} min ${seconds} sec`;
+        }
+    
+        // 初始執行
+        calculateRunTime();
+    
+        // 每秒更新一次
+        setInterval(calculateRunTime, 1000);
+    </script>
+</body>
+
+</html>
