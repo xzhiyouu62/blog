@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <title>xzhiyouu's blog</title>
+    <link rel="stylesheet" href="src/home/css/style.css">
+    <script src="src/home/js/main.js" defer></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+</head>
+
+<body class="bg-gray-900 text-white">
+    <div class="typing-animation">
+        <div class="typing-text">xzhiyouu's blog</div>
+    </div>
+
+    <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <div class="text-2xl font-bold mb-4 md:mb-0">xzhiyouu's blog</div>
+
+            <!-- 搜尋欄 -->
+            <div class="relative w-full md:w-1/3 mb-4 md:mb-0">
+                <input type="text" id="searchInput" placeholder="搜尋文章..." class="w-full bg-gray-700 border border-gray-600 rounded-lg pl-10 pr-4 py-2 text-white focus:outline-none focus:border-green-500">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                <a href="index.html" class="nav-item text-white hover:text-green-400">Home</a>
+                <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
+                <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
+                <a href="terminal.html" class="nav-item text-white hover:text-green-400">Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 搜尋結果顯示區域 -->
+    <div id="searchResults" class="fixed top-20 left-0 w-full bg-gray-800 shadow-lg rounded-lg z-40 hidden">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold text-white">搜尋結果</h3>
+                <button id="closeSearch" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="resultsList" class="space-y-4 max-h-96 overflow-y-auto">
+                <!-- 搜尋結果將動態插入這裡 -->
+            </div>
+        </div>
+    </div>
+
+    <main class="container mx-auto px-4 pt-24">
+        <div class="max-w-4xl mx-auto">
+
+    <!-- 其他內容區塊添加 content-card 類 -->
+    <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+        <div class="flex items-center mb-6">
+            <img src="assets/images/profile.jpg" class="w-24 h-24 rounded-full mr-6 object-cover">
+            <div class="space-y-3">
+                <h1 class="text-3xl font-bold text-white">xzhiyouu</h1>
+                <div class="space-y-1">
+                    <p class="text-green-400">>_ Cybersecurity learner</p>
+                    <p class="text-green-400">>_ CTF player</p>
+                </div>
+                <div class="flex space-x-4 mt-4">
+                    <a href="https://github.com/xzhiyouu62" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/xzhiyouu/" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100023965009972" target="_blank" class="text-gray-400 hover:text-white">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div>
+                <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                        <span class="terminal-prompt">></span>
+                        About Me
+                        <span class="terminal-cursor">_</span>
+                    </h2>
+                <p class="text-gray-400 mb-4">
+                    我還在想要寫甚麼
+                </p>
+            </div>
+
+            <div>
+                <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                        <span class="terminal-prompt">></span>
+                        Skills
+                        <span class="terminal-cursor">_</span>
+                    </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- HTML -->
+                    <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                        <i class="devicon-html5-plain text-5xl text-orange-500 mb-3"></i>
+                        <span class="text-lg text-white">HTML</span>
+                    </div>
+
+                    <!-- C++ -->
+                    <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                        <i class="devicon-cplusplus-plain text-5xl text-blue-500 mb-3"></i>
+                        <span class="text-lg text-white">C++</span>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                        <i class="devicon-python-plain text-5xl text-yellow-500 mb-3"></i>
+                        <span class="text-lg text-white">Python</span>
+                    </div>
+
+                    <!-- Linux -->
+                    <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                        <i class="devicon-linux-plain text-5xl text-gray-300 mb-3"></i>
+                        <span class="text-lg text-white">Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8">
+        <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                參加過的 CTF 競賽 (可能都只解warmup題:D
+                <span class="terminal-cursor">_</span>
+            </h2>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-400">UWSP Pointer Overflow CTF 2024</h3>
+                <p class="text-gray-400">2024.10.09 - now</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-400">1337UP LIVE CTF 2024</h3>
+                <p class="text-gray-400">2024.11.15 - 2024.11.17</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <h3 class="text-lg font-semibold text-green-400">Nothing...</h3>
+                <p class="text-gray-400">keep going</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+        <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                CTF 資源整理
+                <span class="terminal-cursor">_</span>
+            </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- CTF 練習平台 -->
+            <div class="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition duration-300">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-flag text-2xl text-red-500 mr-3"></i>
+                    <h3 class="text-lg font-semibold text-white">練習平台</h3>
+                </div>
+                <div class="space-y-3">
+                    <a href="https://picoctf.org/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>PicoCTF
+                    </a>
+                    <a href="https://lotuxctf.com/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>LoTuX CTF
+                    </a>
+                    <a href="https://ctf.hackme.quest/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>HackMe CTF
+                    </a>
+                    <a href="https://www.hackthebox.com/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>HackTheBox
+                    </a>
+                    <a href="https://pwn.college/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>pwn.college
+                    </a>
+                    <a href="https://cryptohack.org/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>CryptoHack
+                    </a>
+                    <a href="https://tryhackme.com/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                        <i class="fas fa-external-link-alt mr-2"></i>TryHackMe
+                    </a>
+                </div>
+            </div>
+
+            <!-- 解題工具 -->
+            <div class="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition duration-300">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-tools text-2xl text-yellow-500 mr-3"></i>
+                    <h3 class="text-lg font-semibold text-white">解題工具</h3>
+                </div>
+                <div class="space-y-3">
+                    <!-- 密碼學工具 -->
+                    <div class="mb-4">
+                        <h4 class="text-sm text-gray-400 mb-2">密碼學</h4>
+                        <a href="https://www.boxentriq.com/code-breaking/vigenere-cipher" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-key mr-2"></i>Vigenère Cipher
+                        </a>
+                        <a href="https://www.dcode.fr/caesar-cipher" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-key mr-2"></i>Caesar Cipher
+                        </a>
+                        <a href="https://quipqiup.com/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-key mr-2"></i>QuipQiup
+                        </a>
+                        <a href="https://www.guballa.de/substitution-solver" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-key mr-2"></i>Substitution Solver
+                        </a>
+                        <a href="https://www.dcode.fr/rail-fence-cipher" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-key mr-2"></i>Rail Fence Cipher
+                        </a>
+                    </div>
+
+                    <!-- 隱寫術工具 -->
+                    <div class="mb-4">
+                        <h4 class="text-sm text-gray-400 mb-2">隱寫術</h4>
+                        <a href="https://aperisolve.fr/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-image mr-2"></i>Aperi'Solve
+                        </a>
+                        <a href="https://stegonline.georgeom.net/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-image mr-2"></i>StegOnline
+                        </a>
+                    </div>
+
+                    <!-- 其他工具 -->
+                    <div>
+                        <h4 class="text-sm text-gray-400 mb-2">其他工具</h4>
+                        <a href="https://gchq.github.io/CyberChef/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-wrench mr-2"></i>CyberChef
+                        </a>
+                        <a href="https://www.dcode.fr/cipher-identifier" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-key mr-2"></i>Cipher Identifier
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 學習資源 -->
+            <div class="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition duration-300">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-book text-2xl text-blue-500 mr-3"></i>
+                    <h3 class="text-lg font-semibold text-white">學習資源</h3>
+                </div>
+                <div class="space-y-3">
+                    <div>
+                        <h4 class="text-sm text-gray-400 mb-2">比賽資訊</h4>
+                        <a href="https://ctftime.org/" target="_blank" class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-calendar-alt mr-2"></i>CTFtime - 賽事資訊
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+        <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                最新動態
+                <span class="terminal-cursor">_</span>
+            </h2>
+
+        <div class="space-y-4">
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-green-400">2024.12.11</span>
+                    <span class="bg-blue-500 text-xs px-2 py-1 rounded-full">更新</span>
+                </div>
+                <p class="text-gray-400">新增音樂播放清單</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-green-400">2024.12.07</span>
+                    <span class="bg-blue-500 text-xs px-2 py-1 rounded-full">更新</span>
+                </div>
+                <p class="text-gray-400">新增 CTF 資源整理</p>
+            </div>
+            <div class="bg-gray-700 p-4 rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-green-400">2024.12.07</span>
+                    <span class="bg-blue-500 text-xs px-2 py-1 rounded-full">更新</span>
+                </div>
+                <p class="text-gray-400">新增文章搜尋功能</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+        <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                MY PLAYLIST
+                <span class="terminal-cursor">_</span>
+            </h2>
+
+        <div class="spotify-embed">
+            <!-- 可以選擇嵌入播放清單、專輯或單曲 -->
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/7kFyd5oyJdVX2pIi6P4iHE?utm_source=generator&theme=0" width="100%" height="170" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+            </iframe>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5H7ixXZfsNMGbIE5OBSpcb?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
+        <div class="mb-4 text-gray-400">
+            <span>Blog up for</span>
+            <span id="runTime" class="text-gray-400"></span>
+        </div>
+        <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
+    </footer>
+
+        <!-- 添加隱藏的元素 -->
+        <div class="hidden">
+            <span class="t-7b65"></span>
+            <span class="t-3a21"></span>
+            <span class="t-9d45"></span>
+            <span class="t-1f67"></span>
+            <span class="t-2b34"></span>
+            <span class="t-8c12"></span>
+            <span class="t-4d56"></span>
+            <span class="t-5e78"></span>
+            <span class="t-6f90"></span>
+            <span class="t-7g12"></span>
+            <span class="t-8h34"></span>
+            <span class="t-9i56"></span>
+            <span class="t-0j78"></span>
+            <span class="t-1k90"></span>
+            <span class="t-2l12"></span>
+            <span class="t-3m34"></span>
+            <span class="t-4n56"></span>
+            <span class="t-5o78"></span>
+            <span class="t-6p90"></span>
+            <span class="t-7q12"></span>
+            <span class="t-8r34"></span>
+            <span class="t-9s56"></span>
+            <span class="t-0t78"></span>
+            <span class="t-1u90"></span>
+            <span class="t-2v12"></span>
+            <span class="t-3w34"></span>
+            <span class="t-4x56"></span>
+            <span class="t-5y78"></span>
+            <span class="t-6z90"></span>
+            <span class="t-7a12"></span>
+            <span class="t-8b34"></span>
+            <span class="t-9c56"></span>
+            <span class="t-0d78"></span>
+            <span class="t-1e90"></span>
+            <span class="t-2f12"></span>
+            <span class="t-3g34"></span>
+            <span class="t-4h56"></span>
+            <span class="t-5i78"></span>
+            <span class="t-6j90"></span>
+            <span class="t-7k12"></span>
+            <span class="t-8l34"></span>
+            <span class="t-9m56"></span>
+            <span class="t-0n78"></span>
+            <span class="t-1o90"></span>
+            <span class="t-2p12"></span>
+            <span class="t-3q34"></span>
+        </div>
+</body>
+
+</html>
